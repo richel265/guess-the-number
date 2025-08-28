@@ -10,7 +10,7 @@ import { Business } from '../../services/business';
   styleUrl: './input.scss'
 })
 export class InputField {
-  private readonly logic = inject(Business)
+  public readonly logic = inject(Business)
   
   numberGuessValue!: number;
   @Output() numberGuessed = new EventEmitter<number>()

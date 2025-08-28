@@ -1,10 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Inputmessage } from '../inputmessage/inputmessage';
 import { InputField } from '../input/input';
+import { Gameinfo } from '../gameinfo/gameinfo';
 
 @Component({
   selector: 'app-inputcontainer',
-  imports: [Inputmessage, InputField],
+  imports: [Inputmessage, InputField, Gameinfo],
   templateUrl: './inputcontainer.html',
   styleUrl: './inputcontainer.scss'
 })
