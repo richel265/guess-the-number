@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { async } from 'rxjs';
-import { AsyncScheduler } from 'rxjs/internal/scheduler/AsyncScheduler';
 import { ScoreboardPerson } from '../constants/scoreboard-person';
 
 @Injectable({
@@ -19,6 +18,7 @@ export class Business {
 
   difficulties = new Map<string, number>([
     ["Baby", 5],
+    ["Peaceful", 10],
     ["Easy", 20],
     ["Medium", 30],
     ["Hard", 50],
@@ -26,7 +26,7 @@ export class Business {
     ["Hacker", 1000],
   ])
 
-  difficulty: string = "Baby"
+  difficulty: string = "Easy"
 
   numberToGuess: number = -1
   numberOfGuesses: number = -1
@@ -65,6 +65,6 @@ export class Business {
     this.inputMessageValue = `${this.numberOfGuesses}`
     setTimeout(() => {
       this.setMessageSpan("guess")
-    }, 500)
+    }, 750)
   }
 }
