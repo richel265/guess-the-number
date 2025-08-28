@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Business } from '../../services/business';
+import { NewScore } from '../../services/new-score';
 
 @Component({
   selector: 'app-scoreboard',
@@ -7,5 +9,6 @@ import { Component } from '@angular/core';
   styleUrl: './scoreboard.scss'
 })
 export class Scoreboard {
+  public readonly logic = inject(NewScore)
 
 }

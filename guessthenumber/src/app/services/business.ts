@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { async } from 'rxjs';
 import { AsyncScheduler } from 'rxjs/internal/scheduler/AsyncScheduler';
+import { ScoreboardPerson } from '../constants/scoreboard-person';
 
 @Injectable({
   providedIn: 'root'
@@ -25,8 +26,11 @@ export class Business {
     ["Hacker", 1000],
   ])
 
+  difficulty: string = "Baby"
+
   numberToGuess: number = -1
   numberOfGuesses: number = -1
+  numberGuessed: boolean = false
 
   setMessageSpan(id: string){
     this.inputMessageSpan = this.messages.get(id.toLowerCase())
@@ -38,7 +42,8 @@ export class Business {
 
   newGame(){
     this.setMessageSpan("loading")
-    this.newGuessingNumber(this.difficulties.get("Easy"))
+    this.newGuessingNumber(this.difficulties.get(this.difficulty))
+    this.numberGuessed = false
     this.numberOfGuesses = 0
     this.setMessageSpan("guess")
   }
@@ -49,6 +54,8 @@ export class Business {
       console.log("Guess is correct")
       this.setMessageSpan("correct")
       this.numberOfGuesses += 1
+      this.inputMessageValue = `${this.numberOfGuesses}`
+      this.numberGuessed = true
       return
     }
 

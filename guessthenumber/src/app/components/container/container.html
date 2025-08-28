@@ -1,2 +1,11 @@
-<app-inputcontainer [messageSpan]="inputMessageSpan" [messageValue]="inputMessageValue" (guessedNumber)="guessedNumber($event)"></app-inputcontainer>
-<app-scoreboard></app-scoreboard>
+<div id="container">
+    <app-inputcontainer
+    [messageSpan]="inputMessageSpan"
+    [messageValue]="inputMessageValue"
+    (guessedNumber)="guessedNumber($event)"
+    ></app-inputcontainer>
+    @if (this.business.numberGuessed) {<app-youwin></app-youwin>}
+    <app-scoreboard></app-scoreboard>
+</div>
+
+

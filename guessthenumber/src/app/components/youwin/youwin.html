@@ -1,0 +1,9 @@
+<article>
+    <h2>You win!</h2>
+    <form>
+        <p>Please enter your name below:</p>
+        <div id="form"><input type="text" disabled="{{!this.business.numberGuessed}}" [(ngModel)]="scorerName" placeholder="Name" name="name">
+        <button (click)="tryAgain()">Again?</button></div>
+    </form>
+</article>
+

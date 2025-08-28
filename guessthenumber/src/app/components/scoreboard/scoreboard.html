@@ -1,16 +1,29 @@
 <article>
     <h2>Recent High Scores</h2>
     <table>
-        <tr>
+        <thead>
+            <tr>
             <th>Name</th>
             <th>Guesses</th>
             <th>Difficulty</th>
         </tr>
+    </thead>
+        
         <tbody>
-            @for ()
-            <tr>
-
-            </tr>
+            @for (highScore of this.logic.highScores; track highScore) {
+                <tr>
+                    <th scope="row">{{highScore.name}}</th>
+                    <td>{{highScore.guesses}}</td>
+                    <td>{{highScore.difficulty}}</td>
+                </tr>
+            }
+            @empty {
+                <tr>
+                    <th>-</th>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+            }
         </tbody>
     </table>
 </article>
