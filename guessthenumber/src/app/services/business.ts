@@ -18,12 +18,12 @@ export class Business {
 
   difficulties = new Map<string, number>([
     ["Baby", 5],
-    ["Peaceful", 10],
-    ["Easy", 20],
-    ["Medium", 30],
-    ["Hard", 50],
-    ["Stellar", 100],
-    ["Hacker", 1000],
+    ["Easy", 10],
+    ["Medium", 20],
+    ["Hard", 30],
+    ["Stellar", 50],
+    ["Hacker", 100],
+    ["Silent", 1000],
   ])
 
   difficulty: string = "Easy"
